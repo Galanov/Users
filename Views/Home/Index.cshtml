@@ -1,0 +1,24 @@
+﻿@using ManyToManyExample.Models
+@model IEnumerable<User>
+@{
+    ViewBag.Title = "User Page";
+}
+
+<h2>Список пользователей</h2>
+<table>
+    <tr>
+        <th>Имя пользователя</th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name);
+            </td>
+            <td>
+                @Html.ActionLink("Посмотреть права","UserInfo",new { id = item.Id })
+            </td>
+        </tr>
+    }
+</table>

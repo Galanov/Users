@@ -1,0 +1,17 @@
+﻿@using ManyToManyExample.Models
+@model SecurityPolicy
+@{
+    ViewBag.Title = "UserInfo";
+}
+
+<h2>UserInfo</h2>
+<div>
+    <h2>Права: @Model.Name</h2>
+    <h2>Пользователь:</h2>
+    <ul>
+        @foreach (var item in Model.Users)
+        {
+            <li>@item.Name</li>
+        }
+    </ul>
+</div>
